@@ -1,0 +1,54 @@
+# ============================================
+# Docker Compose — Simple iOS To-Do App
+# ============================================
+#
+# NOTE: This file is intentionally minimal/placeholder.
+#
+# This application does NOT require Docker, a backend server,
+# or a database server. All data is stored locally on the iOS
+# device using SQLite via expo-sqlite.
+#
+# Docker Compose is included only because the project template
+# requires it. If you ever extend this app to include a backend
+# API or cloud sync, you can configure services below.
+#
+# To run this app, simply use:
+#   npm run ios
+#
+# ============================================
+
+version: "3.8"
+
+services:
+  # No services required for a local-only iOS app.
+  #
+  # The entire application runs on the iOS device/simulator.
+  # There is no backend, no database server, and no web frontend.
+  #
+  # If you extend this app in the future, uncomment and configure:
+
+  # backend:
+  #   build: ./backend
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://postgres:postgres@db:5432/todos
+  #   depends_on:
+  #     - db
+  #   volumes:
+  #     - ./backend:/app
+  #   command: python manage.py runserver 0.0.0.0:8000
+
+  # db:
+  #   image: postgres:16-alpine
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #     POSTGRES_DB: todos
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+
+# volumes:
+#   pgdata:

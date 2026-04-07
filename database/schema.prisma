@@ -1,0 +1,27 @@
+// =============================================================================
+// NOTE: This Prisma schema exists ONLY as a documentation artifact.
+// This app uses expo-sqlite on-device. There is NO Prisma runtime, no server,
+// no Prisma Client generation. The actual schema is executed as raw SQL via
+// expo-sqlite's execAsync() at app startup (see database/migrations/001_init.sql
+// and lib/db.ts).
+// =============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./local-todos.db"
+}
+
+model Todo {
+  id        Int      @id @default(autoincrement())
+  title     String
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([completed])
+  @@index([createdAt(sort: Desc)])
+  @@map("todos")
+}

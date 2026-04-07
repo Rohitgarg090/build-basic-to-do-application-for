@@ -1,0 +1,32 @@
+{
+  "name": "simple-todo-ios",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A minimal iOS-only personal to-do app with local storage",
+  "workspaces": [
+    "mobile"
+  ],
+  "scripts": {
+    "start": "cd mobile && npx expo start",
+    "ios": "cd mobile && npx expo run:ios",
+    "prebuild": "cd mobile && npx expo prebuild --platform ios",
+    "clean": "cd mobile && npx expo start --clear",
+    "lint": "cd mobile && npx expo lint",
+    "test": "cd mobile && npx jest",
+    "install:mobile": "cd mobile && npm install",
+    "postinstall": "echo '\n✅ Dependencies installed. Run: npm run ios\n'"
+  },
+  "keywords": [
+    "todo",
+    "ios",
+    "expo",
+    "react-native",
+    "sqlite",
+    "local-storage"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
